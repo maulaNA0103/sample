@@ -1,0 +1,62 @@
+<html>
+  <link rel="stylesheet" href="https://raw.githack.com/maulaNA0103/sample/main/chat-window-embed.css" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://raw.githack.com/maulaNA0103/sample/main/chat-window-manager-embed.js"></script>
+  <script src="https://raw.githack.com/maulaNA0103/sample/main/chat-window-embed.js"></script>
+
+  <body>
+    <div class="chat-container "></div>
+    <script>
+      let manager;
+      const config = {
+          width: 400,
+          height: 600,
+          padding: 0,
+          additionalPadding: false,
+          draggable: false,
+          parent: '.chat-container',
+          initialPosition: 'lower-right',
+          server: 'server'
+      };
+      const whitlisted = []
+
+        function setIframe(prop, value) {
+          $('.iframe', window.parent.document).css(prop, value);
+        }
+
+        function displayIcon() {
+          setIframe("width", "64px");
+          setIframe("height", "64px");
+          setIframe("position", "absolute");
+          setIframe("top", "50%");
+          setIframe("right", "0");
+        }
+
+        function displayWindow() {
+          setIframe("width", "448px");
+          setIframe("height", "648px");
+          setIframe("position", "absolute");
+          setIframe("top", "unset");
+          setIframe("bottom", "0");
+        }
+
+      $(document).ready(() => {
+          manager = new ChatWindowManager(config);
+
+
+          window.addEventListener('message', function(event) {
+              var data = event.data;
+              if (typeof data.event !== 'undefined' && data.event == 'connect' &&
+                  typeof data.username !== 'undefined' && typeof data.password !== 'undefined') {
+                  manager.connect(data.username, data.password);
+                  
+                  displayIcon();
+              }
+          });
+      });
+    </script>
+  </body>
+</html>
