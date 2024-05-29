@@ -23,29 +23,24 @@
       };
       const whitlisted = []
 
-        function setIframe(prop, value) {
-          $('.iframe', window.parent.document).css(prop, value);
+      function sendEvent(type) {
+        const data = {
+          'from': 'chat-window',
+          'type': type
         }
+        window.parent.postMessage(data, '*');
+      }
 
-        function displayIcon() {
-          setIframe("width", "64px");
-          setIframe("height", "64px");
-          setIframe("position", "absolute");
-          setIframe("top", "50%");
-          setIframe("right", "0");
-        }
+      function displayIcon() {
+        sendEvent("displayIcon");
+      }
 
-        function displayWindow() {
-          setIframe("width", "448px");
-          setIframe("height", "648px");
-          setIframe("position", "absolute");
-          setIframe("top", "unset");
-          setIframe("bottom", "0");
-        }
+      function displayWindow() {
+        sendEvent("displayWindow");
+      }
 
       $(document).ready(() => {
           manager = new ChatWindowManager(config);
-
 
           window.addEventListener('message', function(event) {
               var data = event.data;
