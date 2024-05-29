@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Page with Full Screen iFrame</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://raw.githack.com/maulaNA0103/sample/main/chat-embed-connector.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            overflow-y: scroll;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Sed dapibus sapien vitae metus ornare, ac consequat mi malesuada. Vestibulum et orci ac mauris feugiat tristique. Donec finibus eros ac felis tincidunt, non sagittis justo facilisis. Pellentesque sit amet ligula at odio varius varius sit amet et est. Cras aliquet tellus ac lorem vestibulum, sit amet interdum metus convallis. Suspendisse potenti.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Sed dapibus sapien vitae metus ornare, ac consequat mi malesuada. Vestibulum et orci ac mauris feugiat tristique. Donec finibus eros ac felis tincidunt, non sagittis justo facilisis. Pellentesque sit amet ligula at odio varius varius sit amet et est. Cras aliquet tellus ac lorem vestibulum, sit amet interdum metus convallis. Suspendisse potenti.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Sed dapibus sapien vitae metus ornare, ac consequat mi malesuada. Vestibulum et orci ac mauris feugiat tristique. Donec finibus eros ac felis tincidunt, non sagittis justo facilisis. Pellentesque sit amet ligula at odio varius varius sit amet et est. Cras aliquet tellus ac lorem vestibulum, sit amet interdum metus convallis. Suspendisse potenti.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Sed dapibus sapien vitae metus ornare, ac consequat mi malesuada. Vestibulum et orci ac mauris feugiat tristique. Donec finibus eros ac felis tincidunt, non sagittis justo facilisis. Pellentesque sit amet ligula at odio varius varius sit amet et est. Cras aliquet tellus ac lorem vestibulum, sit amet interdum metus convallis. Suspendisse potenti.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Sed dapibus sapien vitae metus ornare, ac consequat mi malesuada. Vestibulum et orci ac mauris feugiat tristique. Donec finibus eros ac felis tincidunt, non sagittis justo facilisis. Pellentesque sit amet ligula at odio varius varius sit amet et est. Cras aliquet tellus ac lorem vestibulum, sit amet interdum metus convallis. Suspendisse potenti.</p>
+    </div>
+    
+    <script>
+      $(document).ready(() => {
+        initChatIframe('https://raw.githack.com/maulaNA0103/sample/main/embed.html', 'dummy', 'dummy');
+      });  
+    </script>
+</body>
+</html>
+
