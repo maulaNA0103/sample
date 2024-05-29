@@ -1,0 +1,32 @@
+<html>
+  <link rel="stylesheet" href="https://raw.githack.com/maulaNA0103/sample/main/chat-window.css" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://raw.githack.com/maulaNA0103/sample/main/chat-window-manager.js"></script>
+  <script src="https://raw.githack.com/maulaNA0103/sample/main/chat-window.js"></script>
+
+  <body>
+    <div class="chat-container "></div>
+    <script>
+      let manager;
+
+      const config = {
+          width: 400,
+          height: 600,
+          padding: 20,
+          additionalPadding: true,
+          darggable: true,
+          parent: '.chat-container',
+          initialPosition: 'lower-right',
+          server: 'server'
+      };
+
+      $(document).ready(() => {
+          manager = new ChatWindowManager(config);
+          manager.connect("email", "password");
+      });
+    </script>
+  </body>
+</html>
