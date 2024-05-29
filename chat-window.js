@@ -180,9 +180,6 @@ const ChatWindow = (function() {
                     <textarea data-emojiable="true" type="text" class="message-input" placeholder="${message_placeholder}"
                     autocomplete="off"></textarea>
                 </div>
-                <script>
-                addInputListener();
-                </script>
                 <div class="flex-v">
                     <div class="button">
                         <button class="attachment" type="button">
